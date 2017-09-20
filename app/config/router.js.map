@@ -1,0 +1,15 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/config/router.js"
+    ],
+    "names": [
+        "module",
+        "exports"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,CAChB,CAAC,EAAD,EAAK,kBAAL,EAAyB,KAAzB,CADgB,EAEhB,CAAC,QAAD,EAAW,kBAAX,EAA+B,KAA/B,CAFgB,CAAjB",
+    "file": "../../src/config/router.js",
+    "sourcesContent": [
+        "module.exports = [\n\t['', 'home/index/index', 'get'],\n\t['/index', 'home/index/index', 'get']\n];\n"
+    ]
+}

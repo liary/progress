@@ -1,0 +1,25 @@
+{
+    "version": 3,
+    "sources": [
+        "../../src/extend/think.js"
+    ],
+    "names": [
+        "lodash",
+        "require",
+        "path",
+        "module",
+        "exports",
+        "_",
+        "resource",
+        "join",
+        "think",
+        "ROOT_PATH",
+        "limama",
+        "center"
+    ],
+    "mappings": "AAAA,MAAMA,SAASC,QAAQ,QAAR,CAAf;AACA,MAAMC,OAAOD,QAAQ,MAAR,CAAb;AACAE,OAAOC,OAAP,GAAiB;AACfC,KAAGL,MADY;AAEfM,YAAUJ,KAAKK,IAAL,CAAUC,MAAMC,SAAhB,EAA2B,KAA3B,CAFK;AAGfC,UAAQ;AACN;AACA;AACA;AACAC,YAAQV,QAAQC,KAAKK,IAAL,CAAUC,MAAMC,SAAhB,EAA2B,KAA3B,EAAkC,YAAlC,EAAgD,MAAhD,EAAwD,QAAxD,CAAR;AACR;AACA;AACA;AACA;AACA;AATM;AAHO,CAAjB",
+    "file": "../../src/extend/think.js",
+    "sourcesContent": [
+        "const lodash = require('lodash');\nconst path = require('path');\nmodule.exports = {\n  _: lodash,\n  resource: path.join(think.ROOT_PATH, 'www'),\n  limama: {\n    // info: require(path.join(think.ROOT_PATH, 'package.json')),\n    // admin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'admin')),\n    // home: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'home')),\n    center: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'center')),\n    // modIndex: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'modindexbase')),\n    // modAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'modadminbase')),\n    // extIndex: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extindexbase')),\n    // extAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extadminbase')),\n    // rest: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'rest'))\n  }\n};"
+    ]
+}

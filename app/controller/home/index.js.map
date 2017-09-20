@@ -1,0 +1,22 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/controller/home/index.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "limama",
+        "center",
+        "indexAction",
+        "console",
+        "log",
+        "display"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,MAAN,CAAaC,MAA3B,CAAkC;AAClDC,eAAc;AACbC,UAAQC,GAAR,CAAY,KAAZ;AACA,SAAO,KAAKC,OAAL,CAAa,cAAb,CAAP;AACA;AAJiD,CAAnD",
+    "file": "../../../src/controller/home/index.js",
+    "sourcesContent": [
+        "module.exports = class extends think.limama.center {\n\tindexAction() {\n\t\tconsole.log('===')\n\t\treturn this.display('index_indexx');\n\t}\n}"
+    ]
+}

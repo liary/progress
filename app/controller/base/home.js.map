@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/controller/base/home.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Controller",
+        "__before"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,UAApB,CAA+B;AACzCC,SAAN,GAAiB;AAChB;;AADgB;AAGhB;AAJ8C,CAAhD",
+    "file": "../../../src/controller/base/home.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Controller {\n\tasync __before() {\n\t\t// to do -> check login status\n\t\t\n\t}\n}"
+    ]
+}

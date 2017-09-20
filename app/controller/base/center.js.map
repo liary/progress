@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/controller/base/center.js"
+    ],
+    "names": [
+        "Home",
+        "require",
+        "module",
+        "exports"
+    ],
+    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,QAAR,CAAb;AACAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AACnC;AADmC,CAApC",
+    "file": "../../../src/controller/base/center.js",
+    "sourcesContent": [
+        "const Home = require('./home');\nmodule.exports = class extends Home {\n\t// extends home\n};"
+    ]
+}
