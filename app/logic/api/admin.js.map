@@ -1,0 +1,32 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/logic/api/admin.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Logic",
+        "adduserAction",
+        "allowMethods",
+        "rules",
+        "name",
+        "required",
+        "trim",
+        "alphaNumericDash",
+        "phone",
+        "mobile",
+        "email",
+        "password",
+        "byteLength",
+        "min",
+        "max",
+        "loginAction"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AAC1CC,iBAAgB;AACf,OAAKC,YAAL,GAAoB,MAApB;AACA,OAAKC,KAAL,GAAa;AACZC,SAAM;AACLC,cAAU,IADL;AAELC,UAAM,IAFD;AAGLC,sBAAkB;AAHb,IADM;AAMZC,UAAO;AACNH,cAAU,IADJ;AAENI,YAAQ,IAFF;AAGNH,UAAM;AAHA,IANK;AAWZI,UAAO;AACNL,cAAU,IADJ;AAENK,WAAO,IAFD;AAGNJ,UAAM;AAHA,IAXK;AAgBZK,aAAU;AACTN,cAAU,IADD;AAETO,gBAAY,EAACC,KAAK,CAAN,EAASC,KAAK,EAAd,EAFH;AAGTR,UAAM;AAHG;AAhBE,GAAb;AAsBA;AACDS,eAAc;AACb,OAAKb,YAAL,GAAoB,MAApB;AACA,OAAKC,KAAL,GAAa;AACZC,SAAM;AACLC,cAAU,IADL;AAELC,UAAM;AAFD,IADM;AAKZK,aAAU;AACTN,cAAU;AACV;AAFS;AALE,GAAb;AAUA;AAtCyC,CAA3C",
+    "file": "../../../src/logic/api/admin.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Logic {\n\tadduserAction() {\n\t\tthis.allowMethods = 'post';\n\t\tthis.rules = {\n\t\t\tname: {\n\t\t\t\trequired: true,\n\t\t\t\ttrim: true,\n\t\t\t\talphaNumericDash: true\n\t\t\t},\n\t\t\tphone: {\n\t\t\t\trequired: true,\n\t\t\t\tmobile: true,\n\t\t\t\ttrim: true\n\t\t\t},\n\t\t\temail: {\n\t\t\t\trequired: true,\n\t\t\t\temail: true,\n\t\t\t\ttrim: true\n\t\t\t},\n\t\t\tpassword: {\n\t\t\t\trequired: true,\n\t\t\t\tbyteLength: {min: 6, max: 20},\n\t\t\t\ttrim: true\n\t\t\t}\n\t\t};\n\t}\n\tloginAction() {\n\t\tthis.allowMethods = 'post';\n\t\tthis.rules = {\n\t\t\tname: {\n\t\t\t\trequired: true,\n\t\t\t\ttrim: true\n\t\t\t},\n\t\t\tpassword: {\n\t\t\t\trequired: true,\n\t\t\t\t// md5: true\n\t\t\t}\n\t\t}\n\t}\n}"
+    ]
+}

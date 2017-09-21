@@ -1,0 +1,32 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/model/admin/user.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "adduser",
+        "user",
+        "resId",
+        "add",
+        "login",
+        "userInfo",
+        "where",
+        "phone",
+        "name",
+        "email",
+        "_logic",
+        "find",
+        "isEmpty",
+        "password",
+        "md5"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACpCC,QAAN,CAAcC,IAAd,EAAoB;AAAA;;AAAA;AACnB,SAAMC,QAAQ,MAAM,MAAKC,GAAL,CAASF,IAAT,CAApB;AACA,UAAOC,KAAP;AAFmB;AAGnB;AACKE,MAAN,CAAYH,IAAZ,EAAkB;AAAA;;AAAA;AACjB,SAAMI,WAAW,MAAM,OAAKC,KAAL,CAAW;AACjCC,WAAON,KAAKO,IADqB;AAEjCC,WAAOR,KAAKO,IAFqB;AAGjCA,UAAMP,KAAKO,IAHsB;AAIjCE,YAAQ;AAJyB,IAAX,EAKpBC,IALoB,EAAvB;AAMA;AACA,OAAI,CAACb,MAAMc,OAAN,CAAcP,QAAd,CAAD,IAA4BA,SAASQ,QAAT,KAAsBf,MAAMgB,GAAN,CAAUb,KAAKY,QAAf,CAAtD,EAAgF;AAC/E,WAAOR,QAAP;AACA,IAFD,MAEO;AACN,WAAO,EAAP;AACA;AAZgB;AAajB;AAlByC,CAA3C",
+    "file": "../../../src/model/admin/user.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n\tasync adduser(user) {\n\t\tconst resId = await this.add(user);\n\t\treturn resId;\n\t}\n\tasync login(user) {\n\t\tconst userInfo = await this.where({\n\t\t\tphone: user.name,\n\t\t\temail: user.name,\n\t\t\tname: user.name,\n\t\t\t_logic: 'OR'\n\t\t}).find();\n\t\t// if (!think.isEmpty(userInfo) && userInfo.password === user.password) {\n\t\tif (!think.isEmpty(userInfo) && userInfo.password === think.md5(user.password)) {\n\t\t\treturn userInfo;\n\t\t} else {\n\t\t\treturn {};\n\t\t}\n\t}\n}"
+    ]
+}

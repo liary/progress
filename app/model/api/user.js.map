@@ -1,0 +1,20 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/model/api/user.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "adduser",
+        "console",
+        "log"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACpCC,QAAN,GAAgB;AAAA;AAAA;AACfC,WAAQC,GAAR,CAAY,KAAZ;AACAD,WAAQC,GAAR;AACAD,WAAQC,GAAR,CAAY,KAAZ;AAHe;AAIf;AALyC,CAA3C",
+    "file": "../../../src/model/api/user.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n\tasync adduser() {\n\t\tconsole.log('==>')\n\t\tconsole.log(arguments);\n\t\tconsole.log('==>')\n\t}\n}"
+    ]
+}

@@ -7,12 +7,13 @@ module.exports = {
     // info: require(path.join(think.ROOT_PATH, 'package.json')),
     // admin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'admin')),
     // home: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'home')),
-    center: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'center'))
+    center: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'center')),
     // modIndex: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'modindexbase')),
     // modAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'modadminbase')),
     // extIndex: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extindexbase')),
     // extAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extadminbase')),
     // rest: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'rest'))
+    api: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'api'))
   }
 };
 //# sourceMappingURL=think.js.map
