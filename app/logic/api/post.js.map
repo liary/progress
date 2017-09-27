@@ -1,0 +1,29 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/logic/api/post.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Logic",
+        "getListAction",
+        "allowMethods",
+        "rules",
+        "page",
+        "int",
+        "min",
+        "default",
+        "addArticleAction",
+        "title",
+        "required",
+        "trim",
+        "content"
+    ],
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AAC1CC,iBAAgB;AACf,OAAKC,YAAL,GAAoB,KAApB;AACA,OAAKC,KAAL,GAAa;AACZC,SAAM;AACLC,SAAK,EAACC,KAAK,CAAN,EADA;AAELC,aAAS;AAFJ;AADM,GAAb;AAMA;;AAEDC,oBAAmB;AAClB,OAAKN,YAAL,GAAoB,MAApB;AACA,OAAKC,KAAL,GAAa;AACZM,UAAO;AACNC,cAAU,IADJ;AAENC,UAAM;AAFA,IADK;AAKZC,YAAS;AACRF,cAAU,IADF;AAERC,UAAM;AAFE;AALG,GAAb;AAUA;AAvByC,CAA3C",
+    "file": "../../../src/logic/api/post.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Logic {\n\tgetListAction() {\n\t\tthis.allowMethods = 'get';\n\t\tthis.rules = {\n\t\t\tpage: {\n\t\t\t\tint: {min: 1},\n\t\t\t\tdefault: 1\n\t\t\t}\n\t\t}\n\t}\n\n\taddArticleAction() {\n\t\tthis.allowMethods = 'post';\n\t\tthis.rules = {\n\t\t\ttitle: {\n\t\t\t\trequired: true,\n\t\t\t\ttrim: true\n\t\t\t},\n\t\t\tcontent: {\n\t\t\t\trequired: true,\n\t\t\t\ttrim: true\n\t\t\t}\n\t\t}\n\t}\n}"
+    ]
+}
