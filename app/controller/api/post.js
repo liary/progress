@@ -16,7 +16,7 @@ module.exports = class extends think.limama.api {
 			};
 		})();
 	}
-	getListAction() {
+	listAction() {
 		var _this2 = this;
 
 		return _asyncToGenerator(function* () {
@@ -33,13 +33,39 @@ module.exports = class extends think.limama.api {
 		})();
 	}
 
-	add() {
+	addAction() {
 		var _this3 = this;
 
 		return _asyncToGenerator(function* () {
+			if (_this3.loginInfo.status !== 1) {
+				return _this3.fail(_this3.loginInfo.message);
+			}
 			const model = _this3.model('content/post');
-			const res = yield model.add(_this3.post());
+			const post = _this3.post();
+			const user = yield _this3.session('userInfo');
+			const article = Object.assign(think._.pick(post, ['title', 'content', 'category']), {
+				read: 0,
+				createTime: new Date().getTime().toString().slice(0, 10) >> 0,
+				status: 1,
+				author: user.user
+			});
+			const res = yield model.edit(article);
 			_this3.success(res);
+		})();
+	}
+
+	editAction() {
+		var _this4 = this;
+
+		return _asyncToGenerator(function* () {
+			if (_this4.loginInfo.status !== 1) {
+				return _this4.fail(_this4.loginInfo.message);
+			}
+			const model = _this4.model('content/post');
+			const post = _this4.post();
+			const article = think._.pick(post, ['title', 'content', 'category']);
+			const res = yield model.edit(article, post.id);
+			_this4.success(res);
 		})();
 	}
 
@@ -49,13 +75,13 @@ module.exports = class extends think.limama.api {
   * @returns {number} 2: 账号在别处登陆 0: 未登陆 1: 已登陆
   */
 	islogin() {
-		var _this4 = this;
+		var _this5 = this;
 
 		return _asyncToGenerator(function* () {
-			const user = yield _this4.session('userInfo');
+			const user = yield _this5.session('userInfo');
 			let res = 0;
 			if (!think.isEmpty(user) && user.login) {
-				res = user.ip === _this4.ip ? 1 : 2;
+				res = user.ip === _this5.ip ? 1 : 2;
 			}
 			return res;
 		})();

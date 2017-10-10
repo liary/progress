@@ -10,7 +10,7 @@ module.exports = class extends think.limama.api {
 			}[loginStatus]
 		};
 	}
-	async getListAction() {
+	async listAction() {
 		const model = this.model('post');
 		// const res = await model.getList(page);
 		const res = await model.where({
@@ -24,9 +24,31 @@ module.exports = class extends think.limama.api {
 		
 	}
 
-	async add() {
+	async addAction() {
+		if (this.loginInfo.status !== 1) {
+			return this.fail(this.loginInfo.message);
+		}
 		const model = this.model('content/post');
-		const res = await model.add(this.post());
+		const post = this.post();
+		const user = await this.session('userInfo');
+		const article = Object.assign(think._.pick(post, ['title', 'content', 'category']), {
+			read: 0,
+			createTime: new Date().getTime().toString().slice(0, 10)>>0,
+			status: 1,
+			author: user.user
+		});
+		const res = await model.edit(article);
+		this.success(res);
+	}
+
+	async editAction() {
+		if (this.loginInfo.status !== 1) {
+			return this.fail(this.loginInfo.message);
+		}
+		const model = this.model('content/post');
+		const post = this.post();
+		const article = think._.pick(post, ['title', 'content', 'category']);
+		const res = await model.edit(article, post.id);
 		this.success(res);
 	}
 	

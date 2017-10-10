@@ -1,5 +1,5 @@
 module.exports = class extends think.Logic {
-	getListAction() {
+	listAction() {
 		this.allowMethods = 'get';
 		this.rules = {
 			page: {
@@ -9,7 +9,7 @@ module.exports = class extends think.Logic {
 		}
 	}
 
-	addArticleAction() {
+	addAction() {
 		this.allowMethods = 'post';
 		this.rules = {
 			title: {
@@ -19,6 +19,25 @@ module.exports = class extends think.Logic {
 			content: {
 				required: true,
 				trim: true
+			}
+		}
+	}
+
+	editAction() {
+		this.addAction = 'post';
+		this.rules = {
+			title: {
+				required: true,
+				trim: true
+			},
+			content: {
+				required: true,
+				trim: true
+			},
+			id: {
+				required: true,
+				trim: true,
+				int: true
 			}
 		}
 	}

@@ -8,27 +8,16 @@
         "exports",
         "think",
         "Model",
+        "edit",
+        "article",
+        "id",
         "add",
-        "data",
-        "post",
-        "user",
-        "session",
-        "read",
-        "createTime",
-        "Date",
-        "getTime",
-        "toString",
-        "slice",
-        "status",
-        "category",
-        "title",
-        "content",
-        "author",
-        "res"
+        "where",
+        "update"
     ],
-    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACpCC,IAAN,GAAY;AAAA;;AAAA;AACX,SAAMC,OAAO,MAAKC,IAAL,EAAb;AACA,SAAMC,OAAO,MAAM,MAAKC,OAAL,CAAa,UAAb,CAAnB;AACA,SAAMF,OAAO;AACZG,UAAM,CADM;AAEZC,gBAAY,IAAIC,IAAJ,GAAWC,OAAX,GAAqBC,QAArB,GAAgCC,KAAhC,CAAsC,CAAtC,EAAyC,EAAzC,KAA8C,CAF9C;AAGZC,YAAQ,CAHI;AAIZC,cAAUX,KAAKW,QAAL,IAAiB,EAJf;AAKZC,WAAOZ,KAAKY,KALA;AAMZC,aAASb,KAAKa,OANF;AAOZC,YAAQZ,KAAKA;AAPD,IAAb;AASA,SAAMa,MAAM,MAAM,MAAKhB,GAAL,CAASE,IAAT,CAAlB;AACA,UAAOc,GAAP;AAbW;AAcX;AAfyC,CAA3C",
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACpCC,KAAN,CAAWC,OAAX,EAAoBC,EAApB,EAAwB;AAAA;;AAAA;AACvB,OAAI,OAAOA,EAAP,KAAc,WAAlB,EAA+B;AAC9B,WAAO,MAAM,MAAKC,GAAL,CAASF,OAAT,CAAb;AACA;AACD,UAAO,MAAM,MAAKG,KAAL,CAAW,EAACF,EAAD,EAAX,EAAiBG,MAAjB,CAAwBJ,OAAxB,CAAb;AAJuB;AAKvB;AANyC,CAA3C",
     "file": "../../../src/model/content/post.js",
     "sourcesContent": [
-        "module.exports = class extends think.Model {\n\tasync add() {\n\t\tconst data = this.post();\n\t\tconst user = await this.session('userInfo');\n\t\tconst post = {\n\t\t\tread: 0,\n\t\t\tcreateTime: new Date().getTime().toString().slice(0, 10)>>0,\n\t\t\tstatus: 1,\n\t\t\tcategory: data.category || '',\n\t\t\ttitle: data.title,\n\t\t\tcontent: data.content,\n\t\t\tauthor: user.user\n\t\t}\n\t\tconst res = await this.add(post);\n\t\treturn res;\n\t}\n}"
+        "module.exports = class extends think.Model {\n\tasync edit(article, id) {\n\t\tif (typeof id === 'undefined') {\n\t\t\treturn await this.add(article);\n\t\t}\n\t\treturn await this.where({id}).update(article);\n\t}\n}"
     ]
 }

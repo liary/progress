@@ -39,7 +39,6 @@ module.exports = class extends think.limama.api {
 			const model = _this3.model('admin/user');
 			const loginInfo = _this3.post();
 			const user = yield model.login(loginInfo);
-			console.log(user);
 			if (think.isEmpty(user)) {
 				_this3.fail('login failed');
 			} else {

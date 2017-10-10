@@ -12,7 +12,7 @@ module.exports = {
     // modAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'modadminbase')),
     // extIndex: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extindexbase')),
     // extAdmin: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'extadminbase')),
-	// rest: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'rest'))
-	api: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'api'))
+    // rest: require(path.join(think.ROOT_PATH, 'src', 'controller', 'cmswing', 'rest'))
+    api: require(path.join(think.ROOT_PATH, 'src', 'controller', 'base', 'api'))
   }
 };
