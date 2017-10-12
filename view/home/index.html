@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>爱捣蛋-博客</title>
+<link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>demo</h1>
+    </div>
+  </header>
+  <div class="content">
+    {% for item in items.data %}
+		<li>{{ item.title }}</li>
+	{% endfor %}
+  </div>
+  <script>
+	window.a = {{ JSON.stringify(items) | safe }}
+  </script>
+</body>
+</html>

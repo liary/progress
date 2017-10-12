@@ -78,7 +78,10 @@ exports.view = {
     extname: '.html'
   },
   nunjucks: {
-    handle: nunjucks
+    handle: nunjucks,
+    beforeRender: (env, nunjucks, handleOptions) => {
+      env.addGlobal('JSON', JSON);
+    }
   }
 };
 

@@ -11,17 +11,16 @@ module.exports = class extends think.limama.api {
 		};
 	}
 	async listAction() {
-		const model = this.model('post');
+		// const model = this.model('post');
 		// const res = await model.getList(page);
-		const res = await model.where({
-			status: 1
-		}).page(this.get('page') || 1, 10).countSelect();
+		const s = this.service('api/post');
+		const res =  await s.getList();
+		// const res = await this.service();
 		// newUser.createTime = parseInt(new Date().getTime().toString().slice(0, 10));
 		// newUser.password = think.md5(newUser.password);
 		// const res = await model.adduser(newUser);
 		// model.adduser(newUser);
 		this.success(res);
-		
 	}
 
 	async addAction() {

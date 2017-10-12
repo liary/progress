@@ -1,0 +1,26 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/service/api/post.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Service",
+        "getList",
+        "num",
+        "limit",
+        "res",
+        "model",
+        "where",
+        "status",
+        "page",
+        "countSelect"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,OAApB,CAA4B;AACtCC,QAAN,CAAcC,MAAM,CAApB,EAAuBC,QAAQ,EAA/B,EAAmC;AAAA;;AAAA;AAClC,SAAMC,MAAM,MAAM,MAAKC,KAAL,CAAW,MAAX,EAAmBC,KAAnB,CAAyB;AAC1CC,YAAQ;AADkC,IAAzB,EAEfC,IAFe,CAEVN,GAFU,EAELC,KAFK,EAEEM,WAFF,EAAlB;AAGA,UAAOL,GAAP;AAJkC;AAKlC;AAN2C,CAA7C",
+    "file": "../../../src/service/api/post.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Service {\n\tasync getList(num = 1, limit = 10) {\n\t\tconst res = await this.model('post').where({\n\t\t\tstatus: 1\n\t\t}).page(num, limit).countSelect();\n\t\treturn res;\n\t}\n}"
+    ]
+}

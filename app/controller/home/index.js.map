@@ -10,11 +10,17 @@
         "limama",
         "center",
         "indexAction",
+        "items",
+        "service",
+        "getList",
+        "assign",
+        "displayHome",
+        "fileName",
         "display"
     ],
-    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,MAAN,CAAaC,MAA3B,CAAkC;AAClDC,eAAc;AACb,SAAO,KAAKC,OAAL,CAAa,cAAb,CAAP;AACA;AAHiD,CAAnD",
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,MAAN,CAAaC,MAA3B,CAAkC;AAC5CC,YAAN,GAAoB;AAAA;;AAAA;AACnB;AACA;AACA;AACA;AACA,SAAMC,QAAQ,MAAM,MAAKC,OAAL,CAAa,UAAb,EAAyBC,OAAzB,EAApB;AACA,SAAKC,MAAL,CAAY,OAAZ,EAAqBH,KAArB;AACA,UAAO,MAAKI,WAAL,CAAiB,OAAjB,CAAP;AAPmB;AAQnB;;AAGDA,aAAYC,QAAZ,EAAsB;AACrB,SAAO,KAAKC,OAAL,CAAc,QAAOD,QAAS,EAA9B,CAAP;AACA;AAdiD,CAAnD",
     "file": "../../../src/controller/home/index.js",
     "sourcesContent": [
-        "module.exports = class extends think.limama.center {\n\tindexAction() {\n\t\treturn this.display('index_indexx');\n\t}\n}"
+        "module.exports = class extends think.limama.center {\n\tasync indexAction() {\n\t\t// const items = await this.fetch('http://me.idaodan.com/api/post/list').then(res => {\n\t\t// \tconsole.log(res);\n\t\t// \tres.json();\n\t\t// });\n\t\tconst items = await this.service('api/post').getList();\n\t\tthis.assign('items', items);\n\t\treturn this.displayHome('index');\n\t}\n\n\n\tdisplayHome(fileName) {\n\t\treturn this.display(`home/${fileName}`);\n\t}\n}"
     ]
 }

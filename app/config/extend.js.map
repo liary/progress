@@ -9,14 +9,15 @@
         "model",
         "cache",
         "session",
+        "fetch",
         "module",
         "exports",
         "think",
         "app"
     ],
-    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,YAAR,CAAb;AACA,MAAMC,QAAQD,QAAQ,aAAR,CAAd;AACA,MAAME,QAAQF,QAAQ,aAAR,CAAd;AACA,MAAMG,UAAUH,QAAQ,eAAR,CAAhB;;AAEAI,OAAOC,OAAP,GAAiB,CACfN,IADe,EACT;AACNE,MAAMK,MAAMC,GAAZ,CAFe,EAGfL,KAHe,EAIfC,OAJe,CAAjB",
+    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,YAAR,CAAb;AACA,MAAMC,QAAQD,QAAQ,aAAR,CAAd;AACA,MAAME,QAAQF,QAAQ,aAAR,CAAd;AACA,MAAMG,UAAUH,QAAQ,eAAR,CAAhB;AACA,MAAMI,QAAQJ,QAAQ,aAAR,CAAd;;AAEAK,OAAOC,OAAP,GAAiB,CACfP,IADe,EACT;AACNE,MAAMM,MAAMC,GAAZ,CAFe,EAGfN,KAHe,EAIfC,OAJe,EAKfC,KALe,CAAjB",
     "file": "../../src/config/extend.js",
     "sourcesContent": [
-        "const view = require('think-view');\nconst model = require('think-model');\nconst cache = require('think-cache');\nconst session = require('think-session');\n\nmodule.exports = [\n  view, // make application support view\n  model(think.app),\n  cache,\n  session\n];\n"
+        "const view = require('think-view');\nconst model = require('think-model');\nconst cache = require('think-cache');\nconst session = require('think-session');\nconst fetch = require('think-fetch');\n\nmodule.exports = [\n  view, // make application support view\n  model(think.app),\n  cache,\n  session,\n  fetch\n];\n"
     ]
 }

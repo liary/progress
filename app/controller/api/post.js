@@ -20,11 +20,11 @@ module.exports = class extends think.limama.api {
 		var _this2 = this;
 
 		return _asyncToGenerator(function* () {
-			const model = _this2.model('post');
+			// const model = this.model('post');
 			// const res = await model.getList(page);
-			const res = yield model.where({
-				status: 1
-			}).page(_this2.get('page') || 1, 10).countSelect();
+			const s = _this2.service('api/post');
+			const res = yield s.getList();
+			// const res = await this.service();
 			// newUser.createTime = parseInt(new Date().getTime().toString().slice(0, 10));
 			// newUser.password = think.md5(newUser.password);
 			// const res = await model.adduser(newUser);
